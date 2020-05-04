@@ -2,21 +2,16 @@
 import React, { useEffect, useState } from "react";
 import ReactDom from "react-dom";
 import axios from "axios";
-
+import App from "./App";
 
 const Characters = () => {
 
+    response.data.results.map(people =>{
+        return Characters
 
-
-
-const [character, setCharacter] = useState([]);
-useEffect(() => {
-    axios.get("https://swapi.py4e.com/api/people/")
-    .then(response => {
-        console.log(response);
     })
-    .catch(error => console.log("error", error));
-}, []);
+
+
 
 }
 
