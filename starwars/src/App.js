@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState, useEffect, Card} from 'react';
 import './App.css';
 import Characters from "./components/Character";
 import axios from "axios";
@@ -23,7 +23,10 @@ useEffect(() => {
     axios.get("https://swapi.py4e.com/api/people/")
     .then(response => {
        
-       return  response.data.results
+       
+    console.log(response.data.results);
+
+     setCharacter(response.data.results);
 
         
     })
@@ -33,6 +36,22 @@ useEffect(() => {
   return (
     <div className="App">
       <h1 className="Header">Characters</h1>
+      <ul>
+        {character.map(person =>{
+
+          return(
+            <Card 
+              name={person.name}
+              gender={person.gender}
+              home={person.homeworld}
+              url={person.url}
+              />
+          );
+        })}
+
+
+      </ul>
+      
       
     </div>
   );
