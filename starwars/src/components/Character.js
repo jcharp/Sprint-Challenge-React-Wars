@@ -1,32 +1,12 @@
 // Write your Character component here
 import React from "react";
 
-//import App from "./src/App";
+import App from '../App';
 
-
+/*
 const Characters = props => {
 
-    return (
-        <div className="App">
-          <h1 className="Header">Characters</h1>
-          
-            {props.map(person =>{
-    
-              return(
-                <div>
-                 <h3 name={person.name} />
-                 <h3 gender={person.gender} />
-                 <h3 home={person.homeworld} />
-                 <img url={person.url} />
-                </div>
-              )
-            })}
-    
-    
-        
-          
-          
-        </div>
+    return (<Characters characters={character}/> 
     )
 
 }
@@ -36,4 +16,19 @@ const Characters = props => {
 
 
 
+export default Characters;
+*/
+
+const Characters = props => {
+    return (
+        <div className="App">
+                <div>
+                 <h3>Name: {props.name}</h3>
+                 <h3>Gender: {props.gender} </h3>
+                 <h3>Home: {props.homeworld}</h3>
+                 <img url={props.img_url} />
+                </div>             
+        </div>
+    )
+}
 export default Characters;
