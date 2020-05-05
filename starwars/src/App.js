@@ -68,7 +68,9 @@ const App = () => {
   // sync up with, if any.
 const [character, setCharacter] = useState([]);
 
+
 useEffect(() => {
+
     axios.get("https://swapi.py4e.com/api/people/")
 
     .then(response => {
@@ -80,18 +82,13 @@ useEffect(() => {
     .catch(error => console.log("error", error));
 
 }, []);
- 
+
   return (
     <div className="App">
       <h1 className="Header">Characters</h1>
-      {props.character.map(person => {
-                  <Characters
-                    name={character.name}
-                    gender={character.gender}
-                    home={character.homeworld}
-                    img_url={character.url}
-                   />
-              })}
+      {this.props.characters.map(person =>{
+                  <Characters person={person} />
+          })}
     </div>
   );
 }
